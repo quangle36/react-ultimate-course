@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+  </head>
+  <body>
+    <h1>Javascript</h1>
+    <script>
+        /* date type in js
+        - primitive: number, string, boolean, null, undefiend, Symbol
+          - so sánh tham trị
+        - non-pritive: object, array, function ...
+          - so sánh tham chiếu (vùng nhớ vs nhau)
+        */
+
+        /*   immutate / mutate
+          pure function
+          - nhận vao input và trả ra output
+          - ko dc có side effect (mutate trực tiếp cái biến ban đầu)
+        */
+        const object = { name: 'tony' }
+
+        function updateMessage(input) {
+          input.name = 'quang'
+          return input
+        }
+        updateMessage(object)
+        console.log('pure function: ', object);
+
+        // shallow clone/copy - deep clone/copy
+        const todos = [
+          { id: 1, title: 'react' }
+        ]
+        // const newTodos = [...todos]; // shallow clone
+        const newTodos = JSON.parse(JSON.stringify(todos)); // deep clone
+        newTodos[0].title = 'tony';
+        console.log('shallow clone/copy - deep clone/copy: ', {
+          todos,
+          newTodos
+        });
+        
+    </script>
+  </body>
+</html>
