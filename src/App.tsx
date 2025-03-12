@@ -1,5 +1,6 @@
 import JSX from './JSX';
 import Props from './Props';
+import QuangColorBox from './QuangColorBox/QuangColorBox';
 import State from './State';
 
 function App() {
@@ -7,11 +8,11 @@ function App() {
     <>
       <JSX />
       <br />
-
+      <QuangColorBox />
       <Props />
 
       <br />
-      
+
       <State />
 
       <br />
