@@ -30,9 +30,10 @@ const QuangColorBox = () => {
 
   const handleOnClickBox = (color: Colors) => {
     console.log("color", color);
-    setActiveColor(color);
     if (color === activeColor) {
       setActiveColor("default");
+    } else {
+      setActiveColor(color);
     }
   };
   return (
