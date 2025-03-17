@@ -1,14 +1,19 @@
 .box-container {
-  width: 200px;
-  height: 100px;
-  flex-basis: 48%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 200px;
+	height: 100px;
+	flex-basis: 48%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: antiquewhite;
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.random-color {
+	background-color: red;
 }
