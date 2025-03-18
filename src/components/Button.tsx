@@ -17,10 +17,10 @@ interface ButtonProps {
 <Button className="tony">dad</Button>
 */
 
-function Button({ buttonText = 'Default Button', type="button", variant = 'primary', className, ...restProps }: ButtonProps) {
+function Button({ buttonText = 'Default Button', type = "button", variant = 'primary', className, ...restProps }: ButtonProps) {
   return (
     <button
-      // type={type}
+      type={type}
       // className={className}
       // onClick={onClick}
       className={clsx(

@@ -41,6 +41,42 @@
           todos,
           newTodos
         });
+
+
+        // clousre
+        function createCounter() {
+          let i = 0;
+
+          function increment() {
+            i++; // i = i + 1
+          }
+          var message = `message ${i} - `;
+
+          function getCounterValue() {
+            // var message = `message ${i} - `;
+            console.log("closure: ", message, i);
+          }
+          return { increment, getCounterValue };
+        }
+
+        const functionA = createCounter();
+        functionA.getCounterValue(); // message 0 - 0
+        functionA.increment();
+        functionA.increment();
+        functionA.getCounterValue(); // message 2 - 2
+
+        function outerFunction() {
+          const xyz = 10;
+
+          function innerFunction() {
+            const y = xyz + 10;
+            return y;
+          }
+          innerFunction();
+        }
+        // 1 bien se ko bit mat di khi function thuc thi
+        // 1 function innerFunction co the access 1  bien cua thang outer
+
         
     </script>
   </body>

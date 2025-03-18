@@ -7,6 +7,8 @@ import ListKey from './ListKey';
 import LiftingStateUp from './LiftingStateUp';
 import TonyColorBox from './sample-app/QuangColorBox/TonyColorBox';
 import DatColorBox from './sample-app/Dat/DatGenerateBox';
+import Form from './Form';
+import StateHook from './StateHook';
 
 function App() {
   return (
@@ -33,6 +35,12 @@ function App() {
 
       <br />
       <DatColorBox />
+
+      <br />
+      <Form />
+
+      <br />
+      <StateHook />
 
 
       <br />
