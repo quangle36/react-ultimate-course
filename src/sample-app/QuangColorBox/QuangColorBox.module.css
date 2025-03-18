@@ -1,10 +1,10 @@
 .box-container {
-	width: 200px;
+	width: 100px;
 	height: 100px;
-	flex-basis: 48%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 	background-color: antiquewhite;
 }
 
