@@ -9,8 +9,12 @@ import TonyColorBox from './sample-app/QuangColorBox/TonyColorBox';
 import DatColorBox from './sample-app/Dat/DatGenerateBox';
 import Form from './Form';
 import StateHook from './StateHook';
+import EffectHook from './EffectHook';
+import React from 'react';
+import Button from './components/Button';
 
 function App() {
+  const [isUnmounted, setIsUnmounted] = React.useState(true)
   return (
     <>
       <JSX />
@@ -41,6 +45,15 @@ function App() {
 
       <br />
       <StateHook />
+
+      <br />
+      <Button 
+        buttonText='Test Unmounted'
+        onClick={() => setIsUnmounted(prevState => !prevState)}
+      />
+      {isUnmounted && (
+        <EffectHook />
+      )}
 
 
       <br />
