@@ -9,50 +9,55 @@ import TonyColorBox from './sample-app/QuangColorBox/TonyColorBox';
 import DatColorBox from './sample-app/Dat/DatGenerateBox';
 import Form from './Form';
 import StateHook from './StateHook';
+import QuangQuestionBoard from './sample-app/QuangQuestionBoard/QuangQuestionBoard';
+import QuangForm from './sample-app/QuangForm/Form';
+import JobBoard from './sample-app/QuangJobBoard';
 
 function App() {
-  return (
-    <>
-      <JSX />
-      <br />
-      <QuangColorBox />
-      <Props />
+	return (
+		<>
+			<JSX />
+			<br />
+			<QuangColorBox />
+			<Props />
 
-      <br />
+			<br />
 
-      <State />
-      <br />
+			<State />
+			<br />
 
-      <HandleEvent />
-      <br />
-      <ListKey />
+			<HandleEvent />
+			<br />
+			<ListKey />
 
-      <br />
-      <LiftingStateUp />
+			<br />
+			<LiftingStateUp />
 
-      <br />
-      <TonyColorBox />
+			<br />
+			<TonyColorBox />
 
-      <br />
-      <DatColorBox />
+			<br />
+			<DatColorBox />
 
-      <br />
-      <Form />
+			<br />
+			<Form />
 
-      <br />
-      <StateHook />
+			<br />
+			<StateHook />
 
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-    </>
-  )
+			<QuangQuestionBoard />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			{/* <QuangForm /> */}
+			<JobBoard />
+		</>
+	);
 }
 
-export default App
+export default App;

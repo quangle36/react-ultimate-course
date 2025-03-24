@@ -1,15 +1,17 @@
+@import 'tailwindcss';
 * {
-  margin: 5px;
+	margin: 5px;
 }
 
 .box-container {
-  width: 10px;
+	width: 10px;
 }
 
 .btn-primary {
-
 }
 
-.btn-secondary {}
+.btn-secondary {
+}
 
-.btn-tenrary {}
+.btn-tenrary {
+}

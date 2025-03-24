@@ -1,0 +1,24 @@
+.container {
+	display: flex;
+}
+.red-dot {
+	width: 24px;
+	height: 24px;
+	border-radius: 999px;
+	background-color: red;
+}
+.green-dot {
+	width: 24px;
+	height: 24px;
+	border-radius: 999px;
+	background-color: green;
+}
+.yellow-dot {
+	width: 24px;
+	height: 24px;
+	border-radius: 999px;
+	background-color: yellow;
+}
+.question {
+	display: flex;
+}
