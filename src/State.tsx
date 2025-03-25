@@ -1,7 +1,10 @@
 import React from 'react'
 import Button from './components/Button';
+import { useAppContext } from './contexts/AppContext';
 
 function State() {
+  const { todos } = useAppContext();
+
   const [count, setCount] = React.useState(1);
   const [message, setMessage] = React.useState({
     text: '',
@@ -38,6 +41,11 @@ function State() {
   return (
     <div>
       <h1>State</h1>
+      Demo Todo Context: 
+      {todos.map(todo => (
+        <div key={todo.id}>{todo.title}</div>
+      ))}
+      <br />
       Count: {count} time{count > 1 ? 's' : ''} <br />
       Author: {message.author} <br />
       Text: {message.text}  <br />

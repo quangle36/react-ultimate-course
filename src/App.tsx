@@ -12,6 +12,10 @@ import StateHook from './StateHook';
 import QuangQuestionBoard from './sample-app/QuangQuestionBoard/QuangQuestionBoard';
 import QuangForm from './sample-app/QuangForm/Form';
 import JobBoard from './sample-app/QuangJobBoard';
+import TonyQuestionBoard from './sample-app/TonyQuestionBoard/TonyQuestionBoard';
+import Tonycloned from './sample-app/QuangJobBoard/tonycloned';
+import Product from './wrapper-components/Product';
+import WrapperComponent from './wrapper-components/WrapperComponent';
 
 function App() {
 	return (
@@ -56,6 +60,19 @@ function App() {
 			<br />
 			{/* <QuangForm /> */}
 			<JobBoard />
+
+			<br />
+
+			<TonyQuestionBoard />
+
+			<WrapperComponent>
+				<Tonycloned />
+			</WrapperComponent>
+
+			<WrapperComponent>
+				<Product />
+			</WrapperComponent>
+
 		</>
 	);
 }

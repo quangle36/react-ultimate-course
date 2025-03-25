@@ -44,22 +44,21 @@ const JobBoard = () => {
 	return (
 		<div>
 			<h1>Jobs Board</h1>
-			{jobs.length > 0 &&
-				jobs.map((job) => (
-					<div className="p-2 border space-y-2 mb-4!">
-						<h2 className="font-bold">{job.title}</h2>
-						<p>
-							{job.by} ·{' '}
-							{
-								<>
-									{new Date(job.time * 1000).toLocaleString('en-GB', {
-										timeZone: 'UTC',
-									})}
-								</>
-							}
-						</p>
-					</div>
-				))}
+			{jobs.map((job) => (
+				<div className="p-2 border space-y-2 mb-4!">
+					<h2 className="font-bold">{job.title}</h2>
+					<p>
+						{job.by} ·{' '}
+						{
+							<>
+								{new Date(job.time * 1000).toLocaleString('en-GB', {
+									timeZone: 'UTC',
+								})}
+							</>
+						}
+					</p>
+				</div>
+			))}
 			<button
 				className={cn(
 					{ ['hidden']: !showLoadMore },

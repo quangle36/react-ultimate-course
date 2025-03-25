@@ -1,4 +1,5 @@
 import Button from './components/Button';
+import { useAppContext } from './contexts/AppContext';
 
 
 /* note when render component in jsx
@@ -57,6 +58,8 @@ function Typography({ component1: Component1, component2, isAdult = false, child
 }
 
 function Props() {
+  const { addTodo } = useAppContext();
+
   return (
     <div>
       <h1>Props</h1>
@@ -81,6 +84,11 @@ function Props() {
         className='text-primary'
         onClick={() => console.log("update count")}
       />
+
+      <button onClick={() => addTodo({
+        id: Date.now(),
+        title: 'Title' + Date.now()
+      })}>Add Todo</button>
 
     </div>
   )
