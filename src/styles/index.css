@@ -21,3 +21,53 @@ h1 {
 	font-size: 30px;
 	font-weight: bold;
 }
+
+
+.jobs {
+	display: grid;
+	row-gap: 16px
+}
+
+.post {
+	background-color: #fff;
+	border: 1px solid #dcdcdc;
+	border-radius: 4px;
+	padding: 16px;
+	display: grid;
+	row-gap: 8px
+}
+
+.post__title {
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 0
+}
+
+.post__metadata {
+	font-size: 14px;
+	color: #444
+}
+
+.load-more-button {
+	background-color: #f60;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	margin-top: 20px;
+	padding: 8px 12px
+}
+
+.load-more-button:not(:disabled) {
+	cursor: pointer
+}
+
+.load-more-button:hover {
+	background-color: #e65c00
+}
+
+.load-more-button-disabled {
+	opacity: 0.3;
+	background: gray;
+	cursor: not-allowed !important;
+	pointer-events: none;
+}

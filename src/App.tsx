@@ -13,9 +13,9 @@ import QuangQuestionBoard from './sample-app/QuangQuestionBoard/QuangQuestionBoa
 import QuangForm from './sample-app/QuangForm/Form';
 import JobBoard from './sample-app/QuangJobBoard';
 import TonyQuestionBoard from './sample-app/TonyQuestionBoard/TonyQuestionBoard';
-import Tonycloned from './sample-app/QuangJobBoard/tonycloned';
 import Product from './wrapper-components/Product';
 import WrapperComponent from './wrapper-components/WrapperComponent';
+import TonyJobBoard from './sample-app/TonyJobBoard';
 
 function App() {
 	return (
@@ -50,14 +50,7 @@ function App() {
 			<StateHook />
 
 			<QuangQuestionBoard />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
+			
 			{/* <QuangForm /> */}
 			<JobBoard />
 
@@ -66,13 +59,19 @@ function App() {
 			<TonyQuestionBoard />
 
 			<WrapperComponent>
-				<Tonycloned />
-			</WrapperComponent>
-
-			<WrapperComponent>
 				<Product />
 			</WrapperComponent>
 
+			<TonyJobBoard />
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</>
 	);
 }
