@@ -16,6 +16,7 @@ import TonyQuestionBoard from './sample-app/TonyQuestionBoard/TonyQuestionBoard'
 import Product from './wrapper-components/Product';
 import WrapperComponent from './wrapper-components/WrapperComponent';
 import TonyJobBoard from './sample-app/TonyJobBoard';
+import TraficLight from './sample-app/QuangTrafficLight';
 
 function App() {
 	return (
@@ -50,7 +51,7 @@ function App() {
 			<StateHook />
 
 			<QuangQuestionBoard />
-			
+
 			{/* <QuangForm /> */}
 			<JobBoard />
 
@@ -63,6 +64,8 @@ function App() {
 			</WrapperComponent>
 
 			<TonyJobBoard />
+
+			<TraficLight />
 
 			<br />
 			<br />
