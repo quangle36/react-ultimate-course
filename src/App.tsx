@@ -18,6 +18,7 @@ import WrapperComponent from './wrapper-components/WrapperComponent';
 import TonyJobBoard from './sample-app/TonyJobBoard';
 import TraficLight from './sample-app/QuangTrafficLight';
 import TonyTrafficLight from './sample-app/TonyTrafficLight';
+import RefHook from './RefHook';
 
 function App() {
 	return (
@@ -70,6 +71,9 @@ function App() {
 
 			<br />
 			<TonyTrafficLight  />
+
+			<br />
+			<RefHook />
 
 			<br />
 			<br />

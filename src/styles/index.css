@@ -3,6 +3,13 @@
 	margin: 5px;
 }
 
+button, input {
+	cursor: pointer;
+	border: 1px solid #555;
+	background-color: antiquewhite;
+	color: #000;
+}
+
 .box-container {
 	width: 10px;
 }
