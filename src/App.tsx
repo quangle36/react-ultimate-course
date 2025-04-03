@@ -17,6 +17,7 @@ import Product from './wrapper-components/Product';
 import WrapperComponent from './wrapper-components/WrapperComponent';
 import TonyJobBoard from './sample-app/TonyJobBoard';
 import TraficLight from './sample-app/QuangTrafficLight';
+import TonyTrafficLight from './sample-app/TonyTrafficLight';
 
 function App() {
 	return (
@@ -66,6 +67,9 @@ function App() {
 			<TonyJobBoard />
 
 			<TraficLight />
+
+			<br />
+			<TonyTrafficLight  />
 
 			<br />
 			<br />
