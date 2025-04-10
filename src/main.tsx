@@ -24,5 +24,6 @@ ReactDOM.render(
 
 /*
 tinh nang Dat
+- fix bug
 
 */
