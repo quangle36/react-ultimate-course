@@ -1,5 +1,4 @@
 // import { StrictMode } from 'react'
-import { createRoot } from "react-dom/client";
 import ReactDOM from "react-dom";
 
 import "./styles/DatFromInfo.css";
@@ -21,3 +20,9 @@ ReactDOM.render(
   </AppProvider>,
   document.getElementById("root")
 );
+
+
+/*
+tinh nang Dat
+
+*/
