@@ -1,14 +1,47 @@
 import React from "react";
-import "./DatTrafficLight.css";
 
-enum TrafficLight {
-  RED = "RED",
-  YELLOW = "YELLOW",
-  GREEN = "GREEN",
+interface ILight {
+  backgroundColor: string;
+  duration: number;
+  next: string;
 }
 
+interface ILightCongfig {
+  [key: string]: ILight;
+}
+
+const lightConfig: ILightCongfig = {
+  red: {
+    backgroundColor: "red",
+    duration: 4000,
+    next: "green",
+  },
+  yellow: {
+    backgroundColor: "yellow",
+    duration: 500,
+    next: "red",
+  },
+  green: {
+    backgroundColor: "green",
+    duration: 2000,
+    next: "yellow",
+  },
+};
+
 const DatTrafficLight = () => {
-  const [activeColor, setActiveColor] = React.useState(TrafficLight.GREEN);
+  const [currentColor, setCurrentColor] = React.useState("green");
+
+  React.useEffect(() => {
+    const { duration, next } = lightConfig[currentColor];
+
+    const timer = setTimeout(() => {
+      setCurrentColor(next);
+    }, duration);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [currentColor]);
 
   return (
     <div>
@@ -16,9 +49,15 @@ const DatTrafficLight = () => {
 
       <div className="traffic_container">
         <div className="traffic-light-container traffic-light-container--vertical">
-          <div className="traffic-light" style={{ backgroundColor: "red" }} />
-          <div className="traffic-light" style={{ backgroundColor: "yellow" }} />
-          <div className="traffic-light" style={{ backgroundColor: "green" }} />
+          {Object.keys(lightConfig).map((color) => {
+            return (
+              <div
+                key={color}
+                className="traffic-light"
+                style={{ backgroundColor: color === currentColor ? lightConfig[color].backgroundColor : undefined }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

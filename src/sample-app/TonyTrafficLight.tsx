@@ -1,47 +1,47 @@
-import React from "react"
+import React from "react";
 
 interface ILight {
-  backgroundColor: string,
-  duration: number,
-  next: string
+  backgroundColor: string;
+  duration: number;
+  next: string;
 }
 
 interface ILightCongfig {
-  [key: string]: ILight
+  [key: string]: ILight;
 }
 
 const lightConfig: ILightCongfig = {
   red: {
-    backgroundColor: 'red',
+    backgroundColor: "red",
     duration: 4000,
-    next: 'green'
+    next: "green",
   },
   yellow: {
-    backgroundColor: 'yellow',
+    backgroundColor: "yellow",
     duration: 1000,
-    next: 'red'
+    next: "red",
   },
   green: {
-    backgroundColor: 'green',
+    backgroundColor: "green",
     duration: 3000,
-    next: 'yellow'
-  }
-}
+    next: "yellow",
+  },
+};
 
 function TonyTrafficLight() {
-  const [currentColor, setCurrentColor] = React.useState('green');
+  const [currentColor, setCurrentColor] = React.useState("green");
 
   React.useEffect(() => {
     const { duration, next } = lightConfig[currentColor];
 
     const timer = setTimeout(() => {
       setCurrentColor(next);
-    }, duration)
-   
+    }, duration);
+
     return () => {
-      clearTimeout(timer)
-    }
-  }, [currentColor])
+      clearTimeout(timer);
+    };
+  }, [currentColor]);
 
   return (
     <div>
@@ -49,20 +49,19 @@ function TonyTrafficLight() {
 
       <div className="traffic_container">
         <div className="traffic-light-container traffic-light-container--vertical">
-          {Object.keys(lightConfig).map(color => {
+          {Object.keys(lightConfig).map((color) => {
             return (
-              <div 
+              <div
                 key={color}
-                className="traffic-light" 
-                style={{ backgroundColor: color === currentColor ? lightConfig[color].backgroundColor : undefined }} 
+                className="traffic-light"
+                style={{ backgroundColor: color === currentColor ? lightConfig[color].backgroundColor : undefined }}
               />
-            )
+            );
           })}
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default TonyTrafficLight
+export default TonyTrafficLight;
