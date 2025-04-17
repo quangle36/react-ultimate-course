@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { JobStory } from './data';
-import { cn } from '../../utils/cn';
+import { cn } from '../../../utils/cn';
 const INITIAL_SIZE_LOAD = 6;
 
 interface IJob {
