@@ -1,11 +1,12 @@
 // import { StrictMode } from 'react'
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 
-import "./styles/DatFromInfo.css";
-import "./styles/button.css";
-import "./styles/index.css";
-import App from "./App.tsx";
-import { AppProvider } from "./contexts/AppContext.tsx";
+import './styles/DatFromInfo.css';
+import './styles/button.css';
+import './styles/index.css';
+import App from './App.tsx';
+import { AppProvider } from './contexts/AppContext.tsx';
+import { MovieContextProvider } from './contexts/MovieContext.tsx';
 
 // createRoot(document.getElementById('root')!).render(
 //   // <StrictMode>
@@ -15,12 +16,13 @@ import { AppProvider } from "./contexts/AppContext.tsx";
 //   // </StrictMode>,
 // )
 ReactDOM.render(
-  <AppProvider>
-    <App />
-  </AppProvider>,
-  document.getElementById("root")
+	<AppProvider>
+		<MovieContextProvider>
+			<App />
+		</MovieContextProvider>
+	</AppProvider>,
+	document.getElementById('root')
 );
-
 
 /*
 tinh nang Dat

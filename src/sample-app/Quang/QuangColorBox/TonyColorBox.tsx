@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import styles from './QuangColorBox.module.css';
 import clsx from 'clsx';
 import React from 'react';
-import { getRandomColor } from '../../utils/randomColor';
+import { getRandomColor } from '../../../utils/randomColor';
 enum Colors {
 	AQUA = 'AQUA',
 	RED = 'RED',
