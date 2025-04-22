@@ -79,9 +79,6 @@ function App() {
       <DatTrafficLight />
 
       <br />
-      <RefHook />
-
-      <br />
       <DatMovieForm />
       <br />
       <br />
@@ -89,6 +86,10 @@ function App() {
       <DatFormInfo />
       <br />
       <Form />
+
+      <br />
+      <RefHook />
+
       <br />
       <br />
       <br />

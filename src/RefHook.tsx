@@ -1,4 +1,6 @@
-import React from 'react'
+import clsx from 'clsx';
+import React, { useImperativeHandle, useRef } from 'react'
+import { ImperativeModal } from './components/ImperativeModal';
 
 /* ref
 - You can store information between re-renders (unlike regular variables, which reset on every render).
@@ -19,6 +21,7 @@ const TestElement = React.forwardRef((props, ref) => {
 });
 
 function RefHook() {
+  const buttonImperativeRef = useRef(null);
   const refCount = React.useRef(10);
   const refDivVirtual = React.useRef<HTMLInputElement>(null);
   const refTest = React.useRef<HTMLInputElement>(null);
@@ -31,6 +34,7 @@ function RefHook() {
     }
   })
   const reftParentElement = React.useRef<any>(null);
+  const imeprativeModalRef = React.useRef(null);
   // let count = 10;
   // const [count, setCount] = React.useState(10);
 
@@ -65,6 +69,15 @@ function RefHook() {
       }
     }
     setTimestamp(Date.now())
+  }
+
+  function onFocusButtonImperative() {
+    console.log('onFocusButtonImperative: ', buttonImperativeRef)
+    buttonImperativeRef.current.focus()
+  }
+
+  function toggleModal() {
+    imeprativeModalRef.current.toggleModal()
   }
 
   console.log("stepper form: ", {
@@ -105,8 +118,50 @@ function RefHook() {
       <br />
       Demo forward Ref: <TestElement ref={reftParentElement} />
       <button onClick={updateTimeStamp}>Update timestamp</button>
+
+      <h3>useImperativeHandle</h3>
+      <button type="button" onClick={onFocusButtonImperative}>Focus button</button>
+      <ButtonUseImperative ref={buttonImperativeRef}/> <br />
+
+      <button type="button" onClick={toggleModal}>Toggle Modal</button>
+
+      <ImperativeModal ref={imeprativeModalRef} />
     </div>
   )
 }
 
-export default RefHook
+const ButtonUseImperative = React.forwardRef((props, ref) => {
+  const inputRef = useRef(null);
+  console.log("ButtonUseImperative props: ", {
+    props,
+  })
+
+  useImperativeHandle(ref, () => {
+    return {
+      focus() {
+        inputRef.current.style.background = '#fff'
+      },
+      increment() {}
+    }
+  })
+
+  return (
+    <div>
+      <h5>ButtonUseImperative</h5>
+      <input ref={inputRef} type="" />
+    </div>
+  )
+});
+
+export default RefHook;
+
+/*
+
+cha 
+
+con
+  useImperativeHandle expose
+  - add user
+  - delete user
+
+*/
