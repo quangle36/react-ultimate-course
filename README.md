@@ -1,6 +1,5 @@
 ## React Ultimate Course
 
-
 - libs, frameworks
 - first render, re-render (next render)
 - SPA, MPA (multiple page app)
@@ -36,3 +35,11 @@ $ git push
 
 # create new PR (pull request)
 ```
+
+## FE web (react, angular, vue ...)
+- optimize performance web -> how to do web load fast. (lighthouse, larget content full, first content full...)
+- optimize performance render (react)
+  - prevent component re-render unnecessary
+  - memo
+  - useMemo -> cache heavy caculation
+  - useCallback -> cache function

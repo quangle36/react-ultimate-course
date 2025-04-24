@@ -1,3 +1,4 @@
+import React from 'react';
 import JSX from './JSX';
 import Props from './Props';
 import State from './State';
@@ -23,8 +24,11 @@ import DatMovieForm from './sample-app/Dat/DatMovieForm/DatMovieForm';
 import MovieForm from './sample-app/Quang/QuangMovieForm/MovieForm';
 import QuangColorBox from './sample-app/Quang/QuangColorBox/QuangColorBox';
 import TonyColorBox from './sample-app/Quang/QuangColorBox/TonyColorBox';
+import PerformanceHook from './PerformanceHook';
 
 function App() {
+	const [timestamp, setTimestamp] = React.useState(Date.now());
+
 	return (
 		<>
 			<JSX />
@@ -93,6 +97,10 @@ function App() {
 
       <br />
       <RefHook />
+
+			<br />
+			<button type="button" onClick={() => setTimestamp(Date.now())}>Force Update</button>
+			<PerformanceHook />
 
 			<br />
 			<br />

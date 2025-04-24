@@ -37,3 +37,5 @@ function Button({ buttonText = 'Default Button', type = "button", variant = 'pri
 }
 
 export default Button
+
+/* component -> card -> 10 node dom -> 1000 * 10 = 10000 node */
