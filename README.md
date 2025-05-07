@@ -40,6 +40,6 @@ $ git push
 - optimize performance web -> how to do web load fast. (lighthouse, larget content full, first content full...)
 - optimize performance render (react)
   - prevent component re-render unnecessary
-  - memo
+  - memo -> prevent component re-render
   - useMemo -> cache heavy caculation
   - useCallback -> cache function

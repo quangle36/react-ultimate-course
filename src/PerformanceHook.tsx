@@ -28,6 +28,7 @@ objA.address === objB.address
 
 import React from "react";
 import CardPerformance from "./components/CardPerformance";
+import useResizeWindow from "./hooks/useResizeWindow";
 
 const Alert = React.memo(() => {
   console.log('alert render')
@@ -35,41 +36,46 @@ const Alert = React.memo(() => {
 })
 
 function PerformanceHook() {
+  const { isSmallScreen } = useResizeWindow({});
   const [totalCard, setTotalCard] = React.useState(0)
   const [card, setCard] = React.useState({
     title: '',
     description: ''
   })
 
+  const totalMemorie = React.useMemo(() => {
+    console.log('useMemo')
+    return totalCard + 100;
+  }, [totalCard]);
+
+
   // function  re-created each component re-render
   function updateTotalCard() {
     setTotalCard(prevState => prevState + 1)
   }
 
-  // const updateTitleCard = React.useCallback(() => {
+  const updateTitleCard = React.useCallback(() => {
+    console.log("totalCard: ", totalCard)
+    // setTotalCard(totalCard + 1)
+    setCard(prevState => ({
+      ...prevState,
+      title: 'Title',
+    }))
+  }, [totalCard])
+  // const updateTitleCard = () => {
   //   setTotalCard(totalCard + 1)
   //   setCard(prevState => ({
   //     ...prevState,
   //     title: 'Title',
   //   }))
-  // }, [])
-  const updateTitleCard = () => {
-    setTotalCard(totalCard + 1)
-    setCard(prevState => ({
-      ...prevState,
-      title: 'Title',
-    }))
-  }
-
-  console.log('PerformanceHook render', {
-    totalCard,
-    card
-  })
+  // }
 
   return (
     <div>
       <h1>PerformanceHook</h1>
-      Total Card: {totalCard}
+      Total Card: {totalCard} <br />
+      Demo useMemo: {totalMemorie} <br />
+      Check Screen Size: {isSmallScreen ? 'small' : 'large'} <br />
       <button type="button" onClick={updateTotalCard}>Update Total Card</button>
       <button type="button" onClick={updateTitleCard}>Update Title Card</button>
 

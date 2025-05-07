@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './components/Button';
+import useResizeWindow from './hooks/useResizeWindow';
 
 /*
 - first render -> render with initial state value
@@ -22,6 +23,9 @@ function initializeState() {
 }
 
 function StateHook() {
+  const { isSmallScreen } = useResizeWindow({
+    opposite: true
+  });
   const [count, setCount] = React.useState(initializeState); // 0
 
   function updateCount() {
@@ -38,13 +42,13 @@ function StateHook() {
     //   return prevState + 1
     // });
   }
-
   console.log('StateHook: ', count)
   return (
     <div>
       <h1>StateHook</h1>
 
       Count: {count} <br />
+      Check Screen Size: {isSmallScreen ? 'small' : 'large'} <br />
       <Button
         buttonText='Update Count'
         onClick={updateCount}
