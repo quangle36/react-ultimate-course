@@ -43,3 +43,27 @@ $ git push
   - memo -> prevent component re-render
   - useMemo -> cache heavy caculation
   - useCallback -> cache function
+
+## Authenticate & authorize
+### Authenticate: xác thực
+- Kiểm tra xem em có đăng ký tài khoản trong hệ thống không?
+
+### Authorize: phân quyền
+- admin
+- member
+- operator
+- manager
+
+- Phân quyền dưới FE
+  - phân quyền theo page
+    - member: 
+      - can access pages that can show list data (show list product, show list user, ...)
+      - can't access pages that create, add new member ...
+    - admin: can access all pages
+  - phân quyền theo resource - profile: show, edit, delete ... (CRUD)
+    - admin: can action all method of resource profile.
+    - operator: can show, edit, update ...
+    - member: can show
+
+- Phân quyền dưới BE
+  - user role member -> call api DELETE -> inject access_token -> BE decode access token to check what role? -> if member -> rejected / admin -> accepted

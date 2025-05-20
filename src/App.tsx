@@ -31,6 +31,8 @@ import UserInformation from './components/user/UserCart';
 import UserCart from './components/user/UserInformation';
 import UserSetting from './components/user/UserSetting';
 import UserSettingDetail from './components/user/UserSettingDetail';
+import BookKeeper from './BookKeeper';
+import BookKeeperDetail from './BookKeeperDetail';
 
 function App() {
   const location = useLocation();
@@ -95,6 +97,14 @@ function App() {
 									User
 								</Link>
 							</li>
+							<li>
+								<Link 
+									to="/bookkeeper" 
+									className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+								>
+									Bookkeeper
+								</Link>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -115,6 +125,10 @@ function App() {
 						<Route path="setting" element={<UserSetting />}>
 							<Route path=":settingId" element={<UserSettingDetail />} />
 						</Route>
+					</Route>
+					<Route path="/bookkeeper" element={<BookKeeper />}>
+						<Route index element={<div>Please choose invoice</div>} />
+						<Route path=":invoiceId" element={<BookKeeperDetail />}  />
 					</Route>
 				</Routes>
 			</main>
