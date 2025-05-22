@@ -33,6 +33,7 @@ import UserSetting from './components/user/UserSetting';
 import UserSettingDetail from './components/user/UserSettingDetail';
 import BookKeeper from './BookKeeper';
 import BookKeeperDetail from './BookKeeperDetail';
+import Todo from './pages/todo';
 
 function App() {
   const location = useLocation();
@@ -105,6 +106,14 @@ function App() {
 									Bookkeeper
 								</Link>
 							</li>
+							<li>
+								<Link 
+									to="/todo" 
+									className="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+								>
+									Todo
+								</Link>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -130,6 +139,7 @@ function App() {
 						<Route index element={<div>Please choose invoice</div>} />
 						<Route path=":invoiceId" element={<BookKeeperDetail />}  />
 					</Route>
+					<Route path="/todo" element={<Todo />} />
 				</Routes>
 			</main>
 
