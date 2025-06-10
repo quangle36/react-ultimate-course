@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 function JSX() {
-  const sum = 1 + 1;
+  const labelChart = useSelector(store => store.chart.options.label);
+  console.log('state redux============================: ', labelChart)
 
+  const sum = 1 + 1;
 
   const renderButton = (
     <button type="button">Count</button>
