@@ -127,6 +127,7 @@ function App() {
 					<Route path="/quang-color-box" element={<QuangColorBox />} />
 					<Route path="/props" element={<Props />} />
 					<Route path="/state" element={<State />} />
+					<Route path="/user" element={<User />} />
 					<Route path="/user/:userId" element={<User />}>
 						<Route index element={<>please click tab</>} />
 						<Route path="information" element={<UserInformation />} />

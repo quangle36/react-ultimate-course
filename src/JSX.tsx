@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 function JSX() {
-  const labelChart = useSelector(store => store.chart.options.label);
+  const labelChart = useSelector(state => state.chart.options.label);
   console.log('state redux============================: ', labelChart)
 
   const sum = 1 + 1;
@@ -37,6 +37,8 @@ function JSX() {
       Render Button: {renderButton} <br />
       Title: {renderTitle()} <br />
       Closed element: <input />
+      <br />
+      Title Chart: {labelChart}
     </div>
   )
 }
